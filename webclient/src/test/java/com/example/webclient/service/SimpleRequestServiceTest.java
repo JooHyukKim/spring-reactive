@@ -1,43 +1,30 @@
 package com.example.webclient.service;
 
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.AutoConfigureOrder;
 import org.springframework.boot.test.context.SpringBootTest;
-import okhttp
 
+import java.util.Map;
+
+@Slf4j
 @SpringBootTest
 public class SimpleRequestServiceTest {
 
     @Autowired
     SimpleRequestService service;
 
-    @Test
-    public void getProcessorBLockingTest(){
-        PersonResponse personResponse = service.getProcessor("hi","hello").block();
-    }
+    private final String processorId = "3d183c36-017b-1000-60c2-db0656f84b6a";
 
-    private MockWebServer mockWebServer;
-
-
-    @BeforeEach
-    void setupMockWebServer() {
-        mockWebServer = new MockWebServer();
-
-        TwilioClientProperties properties = new TwilioClientProperties();
-        properties.setBaseUrl(mockWebServer.url("/").url().toString());
-        properties.setAccountSid("ACd936ed6d");
-
-        twilioClient = new TwilioClient(WebClient.create(), properties);
-    }
-
+    // 성공적으로 들어올시에
     @Test
     public void getProcessorNonBLockingTest(){
-        service.getProcessor("hi","hello")
-                .doOnNext(personResponse -> {
-                    Assertions.assertEquals("hello", personResponse);
-                }).subscribe();
+        Map<String,String> res = service.getProcessor(processorId);
+
+        log.info("getProcessorNonBLockingTest() >>> {}",res.get("id"));
+
+        Assertions.assertEquals(processorId, res.get("id"));
     }
+
 }
