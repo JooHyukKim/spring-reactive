@@ -40,6 +40,9 @@ dependencies {
 
     implementation 'org.json:json:20160810'
 
+    implementation 'org.springframework.boot:spring-boot-starter-aop'
+
+
 }
 
     //JSON
