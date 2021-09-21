@@ -21,7 +21,7 @@ public class FlowApiTest {
 
     @Test
     public void scheduleComponents() {
-        String processgroupid = "017b10ba-4237-1700-cecc-11b3db126432";
+        String processgroupid = "017b10ba-4237-1700-cecc-11b3db126432f";
         String state = "STOPPED";
 
         Map requestBody = this.createMap(processgroupid, state);
