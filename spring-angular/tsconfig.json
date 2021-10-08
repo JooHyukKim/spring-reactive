@@ -2,8 +2,8 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
-    "outDir": "./dist/out-tsc",
+    "baseUrl": "./frontend/",
+    "outDir": "./frontend/dist",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitReturns": true,
