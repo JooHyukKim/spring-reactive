@@ -1,7 +1,6 @@
 package com.example.webclient.nifi.api;
 
 import com.example.webclient.nifi.DefaultApiClient;
-import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -15,7 +14,7 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class FlowApi {
 
-    private WebClient webClient = new DefaultApiClient().getInstance();
+    private WebClient webClient = DefaultApiClient.getInstance();
 
 
     public Map scheduleComponents(String id, Map requestBody) {

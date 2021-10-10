@@ -14,7 +14,7 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class ProcessGroupsApi {
 
-    private WebClient webClient = new DefaultApiClient().getInstance();
+    private WebClient webClient = DefaultApiClient.getInstance();
 
     public Map getProcessGroup(@NonNull String id) {
         String uri = new StringBuilder("/process-groups/")

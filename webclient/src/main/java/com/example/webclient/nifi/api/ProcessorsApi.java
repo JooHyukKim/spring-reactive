@@ -1,10 +1,8 @@
 package com.example.webclient.nifi.api;
 
 import com.example.webclient.nifi.DefaultApiClient;
-import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
@@ -17,7 +15,7 @@ import java.util.function.Predicate;
 @RequiredArgsConstructor
 public class ProcessorsApi {
 
-    private WebClient webClient = new DefaultApiClient().getInstance();
+    private WebClient webClient = DefaultApiClient.getInstance();
 
     public Map getProcessor(String processorId) {
         String uri = new StringBuilder("/processors/")
