@@ -94,8 +94,8 @@
           "options": {
             "main": "./demo-ui/src/test.ts",
             "polyfills": "./demo-ui/src/polyfills.ts",
-            "tsConfig": "tsconfig.spec.json",
-            "karmaConfig": "karma.conf.js",
+            "tsConfig": "./demo-ui/tsconfig.spec.json",
+            "karmaConfig": "./demo-ui/karma.conf.js",
             "inlineStyleLanguage": "scss",
             "assets": [
               "./demo-ui/src/favicon.ico",
