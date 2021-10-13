@@ -14,3 +14,12 @@ gradle-app.setting
 # gradle/wrapper/gradle-wrapper.properties
 
 node_modules
+.DS_Store
+.idea/.name
+.idea/gradle.xml
+.idea/jarRepositories.xml
+.idea/misc.xml
+.idea/modules/angular-meets-springboot.iml
+.idea/vcs.xml
+.idea/workspace.xml
+.DS_Store
